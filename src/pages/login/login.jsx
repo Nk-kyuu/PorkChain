@@ -26,6 +26,7 @@ const login = () => {
                 <Button
                     type="submit"
                     variant="contained"
+                    color='warning'
                     sx={{ mt: 3, mb: 2 }}
                     href='/home'
                 >
