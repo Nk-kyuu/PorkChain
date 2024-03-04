@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import Home from './pages/home/home.jsx'
 import AdminDashboard from './pages/admin/adminDashboard.jsx'
@@ -10,6 +10,11 @@ import ConsumerDetail from './pages/consumerDetail/consumerDetail.jsx'
 import FarmerAccount from './pages/farmerAccount/farmerAc.jsx'
 import RetailerAccount from './pages/retailerAccount/retailerAcc.jsx'
 import SlaughterhouseAccount from './pages/slaughterhouseAccount/slaughterhouseAcc.jsx'
+import FarmerDashboard from './pages/farmer/FarmerDashboard.jsx'
+import FarmerPork from './pages/farmer/FarmerPork.jsx'
+import FarmerAddProduct from './pages/farmer/FarmerAddProduct.jsx'
+
+
 
 const router = createBrowserRouter([
   {
@@ -54,10 +59,25 @@ const router = createBrowserRouter([
 
 
   
+  {
+    path: '/farmerDashboard',
+    element: <FarmerDashboard />,
+  },
+  {
+    path: '/farmerPork',
+    element: <FarmerPork />,
+  },
+  {
+    path: '/farmerAddProduct',
+    element: <FarmerAddProduct />,
+  },
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    
     <RouterProvider router={router} />
+    
   </React.StrictMode>,
 );
