@@ -3,6 +3,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import SidebarAdmin from '../../components/sidebar/sidebarAdmin';
 
 import { Container } from '@mui/material';
 
@@ -44,7 +45,13 @@ function adminDashboard() {
     ];
 
     return (
+
         <Container>
+             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+
+                <SidebarAdmin />
+            </div>
+
             <h1>Transaction</h1>
             <Table size="small" border="1px">
                 <TableHead>

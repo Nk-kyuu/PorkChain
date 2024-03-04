@@ -22,17 +22,17 @@ const login = () => {
         <ThemeProvider theme={defaultTheme}>
             <Container component="main" maxWidth="xs" >
                 <CssBaseline />
-                <div style={{ position: 'absolute', top: 0, right: '200px', margin: '20px' }}>
-                <Button
-                    type="submit"
-                    variant="contained"
-                    color='warning'
-                    sx={{ mt: 3, mb: 2 }}
-                    href='/home'
-                >
-                    For consumer
-                </Button>
-            </div>
+                {/* <div style={{ position: 'absolute', top: 0, right: '200px', margin: '20px' }}>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color='warning'
+                        sx={{ mt: 3, mb: 2 }}
+                        href='/home'
+                    >
+                        For consumer
+                    </Button>
+                </div> */}
                 <Box
                     sx={{
                         marginTop: 8,
@@ -84,7 +84,7 @@ const login = () => {
                             type="submit"
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
-                            href='/home'
+                            href='/farmerDashboard'
                         >
                             Login
                         </Button>

@@ -1,6 +1,5 @@
 import './register.css';
-import { Button,TextField,Avatar,CssBaseline,FormControlLabel,
-Link,Grid,Box,Typography,Container,MenuItem,Checkbox} from '@mui/material';
+import { Button,TextField,Avatar,CssBaseline,Grid,Box,Typography,Container,MenuItem} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
@@ -142,6 +141,7 @@ const register = () => {
                 </Grid>              
               </Grid>
               <Button
+                href='/adminAddUser'
                 type="submit"
                 fullWidth
                 variant="contained"

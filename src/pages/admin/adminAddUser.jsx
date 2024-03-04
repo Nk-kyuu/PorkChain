@@ -4,6 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Container, Button } from '@mui/material';
+import SidebarAdmin from '../../components/sidebar/sidebarAdmin';
 
 function adminAddUser() {
     // Generate Order Data
@@ -56,9 +57,10 @@ function adminAddUser() {
 
     return (
         <Container>
+            <SidebarAdmin/>
             <h1>User</h1>
             <div style={{position: 'absolute',top:'50px', right: '200px'}}>
-                <Button variant='contained' href='/home'>Add User</Button>
+                <Button variant='contained' href='/register'>Add User</Button>
             </div>
             <Table size="small" border="1px">
                 <TableHead>

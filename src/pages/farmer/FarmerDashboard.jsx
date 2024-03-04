@@ -1,4 +1,3 @@
-import React from 'react'
 import Sidebar from '../../components/sidebar/sidebar'
 import Header from '../../layout/Header'
 import "../farmer/FarmerPork.css"
