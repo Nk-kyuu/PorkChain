@@ -6,6 +6,12 @@ import Home from './pages/home/home.jsx'
 import AdminDashboard from './pages/admin/adminDashboard.jsx'
 import AdminAddUser from './pages/admin/adminAddUser.jsx'
 import FarmerDashboard from './pages/FarmerDashboard.jsx'
+import Register from './pages/register/register.jsx'
+import ConsumerDetail from './pages/consumerDetail/consumerDetail.jsx'
+import FarmerAccount from './pages/farmerAccount/farmerAc.jsx'
+import RetailerAccount from './pages/retailerAccount/retailerAcc.jsx'
+import SlaughterhouseAccount from './pages/slaughterhouseAccount/slaughterhouseAcc.jsx'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -26,7 +32,32 @@ const router = createBrowserRouter([
   {
     path: '/farmer',
     element: <FarmerDashboard/>
-  }
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+
+  {
+    path: '/consumerDetail',
+    element: <ConsumerDetail />,
+  },
+  {
+    path: '/farmerAccount',
+    element: <FarmerAccount />,
+  },
+
+  {
+    path: '/retailerAccount',
+    element: <RetailerAccount />,
+  },
+
+  {
+    path: '/slaughterhouseAccount',
+    element: <SlaughterhouseAccount />,
+  },
+
+
   
 ])
 
