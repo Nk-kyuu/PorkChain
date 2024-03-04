@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        input[type=text], input[type=number], input[type=date], select {
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            padding: 6px 14px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 2px solid #D8D5DB;
+            border-radius: 7px;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 10%;
+            background-color: #C42021;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #C42021;
+        }
+        
+        div {
+            border-radius: 3px;
+            background-color: #f2f2f2;
+            padding: 1px;
+        }
+        
+        .stTitle {
+            color: rgb(42, 42, 199);
+            font-size: 20px;
+            font-weight: 800;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+        }
+
+        /* .stBorder { 
+            border: solid 5px rgb(71, 10, 10);
+            border-radius: 10px;
+        } */
+
+        /* div {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #d8d5db;
+            width: 100cm;
+            height: 100cm;
+            border: 2 px dashed darkgreen;
+        } */
+        
+        /* div {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 10px;
+            margin: 8px 0;
+            outline: none;
+            padding: 2px ;
+            box-sizing: border-box;
+            transition: 3s;
+            text-align: center;
+        } */
+
+    </style>
+</head>
+<body>
+    <h1 class="stTitle">Add Information</h1>
+    <form>
+    <!-- <form action="" target="_blank" method="get"> -->
+        <div>
+            <label for="lotID">Lot ID</label>
+            <input type="text" id="lotID" name="lotID" pattern="[0-9]{10}" placeholder="0123456789"><br><br>
+        </div>
+        <div>
+            <label for="weight">Weight</label>
+            <input type="number" id="weight" name="weight"><br><br>
+        </div>
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity"><br><br>
+        </div>
+        <div>
+            <label for="origin">Origin Source</label>
+            <input type="text" id="origin" name="origin"><br><br>
+        </div>
+        <div>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location"><br><br>
+        </div>
+        <div>
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" name="startDate"><br><br>
+        </div>
+        <div>
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" name="endDate"><br><br>
+        </div>
+        <div>
+            <input type="submit" value="Add">
+        </div>
+    </form>
+</body>
+</html>
