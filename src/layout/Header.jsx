@@ -1,11 +1,15 @@
 import '../layout/Header.css'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
         <>
             <div>
                 <div className='header' >Porkchain</div>
-                {/* <button>logout</button> */}
+                <Link to="/">
+                <button className='logout-header'>Logout</button>
+                </Link>
+                
             </div>
 
         </>
