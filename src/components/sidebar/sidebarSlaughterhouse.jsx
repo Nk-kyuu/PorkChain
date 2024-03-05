@@ -13,7 +13,7 @@ function sidebarSlaughterhouse() {
             navigate(key);
           }}
         >
-          <Menu.Item key="/slaughterhouseDashboard">Dashboard</Menu.Item>
+          <Menu.Item key="/slaughterDashboard">Dashboard</Menu.Item>
           <Menu.Item key="/slaughterhousePork">Pork</Menu.Item>
         </Menu>
       </div>

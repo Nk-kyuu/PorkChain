@@ -70,7 +70,7 @@ const router = createBrowserRouter([
     element: <FarmerAddProduct />,
   },
   {
-    path: '/slaughterhouseDashboard',
+    path: '/slaughterDashboard',
     element: <SlaughterhouseDashboard />,
   },
   {
