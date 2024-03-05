@@ -1,96 +1,90 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { Container, Button } from '@mui/material';
+import { Box } from '@mui/system';
+import { DataGrid } from '@mui/x-data-grid';
+import { Button } from '@mui/material';
 import SidebarAdmin from '../../components/sidebar/sidebarAdmin';
+import Adminappbar from '../../components/appbar/Adminappbar';
 
 function adminAddUser() {
-    // Generate Order Data
-    function createData(userID, role, address, username, firstname, lastname, email, phone) {
-        return { userID, role, address, username, firstname, lastname, email, phone };
-    }
-
-    const rows = [
-        createData(
-            1,
-            'farmer',
-            'x006555848',
-            'john5555',
-            'john',
-            'carter',
-            'john12@gmail.com',
-            '0950473789'
-        ),
-        createData(
-            2,
-            'slaughter',
-            'x0065557758',
-            'lin5555',
-            'lin',
-            'lili',
-            'lili69@gmail.com',
-            '0955553789'
-        ),
-        createData(
-            3,
-            'retailer',
-            'x005558748',
-            'percent5555',
-            'percent',
-            'chonti',
-            'chonti888@gmail.com',
-            '0955883789'
-        ),
-        createData(
-            4,
-            'farmer',
-            'x006755848',
-            'khing785',
-            'khing',
-            'khengkheng',
-            'kheng875@gmail.com',
-            '0950473789'
-        ),
+    const columns = [
+        { field: 'userID', headerName: 'UserID', width: 90 },
+        {
+            field: 'role',
+            headerName: 'Role',
+            width: 110,
+            editable: true,
+        },
+        {
+            field: 'address',
+            headerName: 'Address',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'username',
+            headerName: 'Username',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'firstname',
+            headerName: 'First name',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'lastname',
+            headerName: 'Last name',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'email',
+            headerName: 'Email',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'phone',
+            headerName: 'Phone',
+            width: 150,
+            editable: true,
+        },
     ];
 
+    const rows = [
+        { userID: 1, role: 'farmer', address: 'x0065454888', username: 'NK-Kyuu', firstname: 'Ingkamom', lastname: 'Chatree', email: 'namkhing1830@gmail.com', phone: '0950473789' },
+        { userID: 2, role: 'farmer', address: 'x0065454888', username: 'NK-Kyuu', firstname: 'Ingkamom', lastname: 'Chatree', email: 'namkhing1830@gmail.com', phone: '0950473789' },
+        { userID: 3, role: 'farmer', address: 'x0065454888', username: 'NK-Kyuu', firstname: 'Ingkamom', lastname: 'Chatree', email: 'namkhing1830@gmail.com', phone: '0950473789' },
+        { userID: 4, role: 'farmer', address: 'x0065454888', username: 'NK-Kyuu', firstname: 'Ingkamom', lastname: 'Chatree', email: 'namkhing1830@gmail.com', phone: '0950473789' },
+        { userID: 5, role: 'farmer', address: 'x0065454888', username: 'NK-Kyuu', firstname: 'Ingkamom', lastname: 'Chatree', email: 'namkhing1830@gmail.com', phone: '0950473789' },
+    ]
+
     return (
-        <Container>
+        <Box sx={{ height: 400, width: '100%' }}>
+            <Adminappbar/>
             <SidebarAdmin/>
-            <h1>User</h1>
-            <div style={{position: 'absolute',top:'50px', right: '200px'}}>
-                <Button variant='contained' href='/register'>Add User</Button>
-            </div>
-            <Table size="small" border="1px">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>UserID</TableCell>
-                        <TableCell>role</TableCell>
-                        <TableCell>address</TableCell>
-                        <TableCell>username</TableCell>
-                        <TableCell>firstname</TableCell>
-                        <TableCell>lastname</TableCell>
-                        <TableCell>email</TableCell>
-                        <TableCell>phone</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.lotID}>
-                            <TableCell>{row.userID}</TableCell>
-                            <TableCell>{row.role}</TableCell>
-                            <TableCell>{row.address}</TableCell>
-                            <TableCell>{row.username}</TableCell>
-                            <TableCell>{row.firstname}</TableCell>
-                            <TableCell>{row.lastname}</TableCell>
-                            <TableCell>{row.email}</TableCell>
-                            <TableCell>{row.phone}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </Container>
+            <h1 href='/register' style={{ position: 'absolute', top: 100, left: 300}}>User Information</h1>
+            <Button variant='contained' color='warning' href='/register' sx={{ position: 'absolute', top: 100, right: 100 }}>Add User</Button>
+        <Box sx={{ width: '80%', margin: 'auto', marginLeft: '300px', marginTop: '60px', display: 'flex'  }}>
+        <DataGrid
+            rows={rows}
+            columns={columns}
+            getRowId={(row) => row.userID}
+            initialState={{
+                pagination: {
+                    paginationModel: {
+                        pageSize: 5,
+                    },
+                },
+            }}
+            pageSizeOptions={[5]}
+            disableRowSelectionOnClick
+            checkboxSelection
+            autoPageSize
+            autoHeight
+        />
+        </Box>
+    </Box>
     )
 }
 

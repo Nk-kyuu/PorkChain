@@ -1,81 +1,70 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import SidebarAdmin from '../../components/sidebar/sidebarAdmin';
-
-import { Container } from '@mui/material';
+import { Box } from '@mui/system';
+import { DataGrid } from '@mui/x-data-grid';
+import Adminappbar from '../../components/appbar/Adminappbar';
 
 function adminDashboard() {
-    // Generate Order Data
-    function createData(lotID, action, location, logDateTime, eventDateTime) {
-        return { lotID, action, location, logDateTime, eventDateTime };
-    }
-
-    const rows = [
-        createData(
-            1,
-            'add',
-            'farm',
-            '16 Mar 2019: 10:20',
-            '17 Mar 2019: 10:20',
-        ),
-        createData(
-            2,
-            'add',
-            'farm',
-            '20 Mar 2019: 10:20',
-            '21 Mar 2019: 10:20',
-        ),
-        createData(
-            3,
-            'add',
-            'farm',
-            '26 Mar 2019: 10:20',
-            '27 Mar 2019: 10:20',
-        ),
-        createData(
-            4,
-            'add',
-            'farm',
-            '30 Mar 2019: 10:20',
-            '31 Mar 2019: 10:20',
-        ),
+    const columns = [
+        { field: 'lotID', headerName: 'LotID', width: 90 },
+        {
+            field: 'action',
+            headerName: 'Action',
+            width: 110,
+            editable: true,
+        },
+        {
+            field: 'location',
+            headerName: 'Location',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'logDateTime',
+            headerName: 'LogDateTime',
+            width: 150,
+            editable: true,
+        },
+        {
+            field: 'eventDateTime',
+            headerName: 'LogDateTime',
+            width: 150,
+            editable: true,
+        },
     ];
 
+    const rows = [
+        { lotID: 1, action: 'add', location: 'farm', logDateTime: '22 Mar 2024: 10:20', eventDateTime: '25 Mar 2024: 10:20' },
+        { lotID: 2, action: 'add', location: 'farm', logDateTime: '22 Mar 2024: 10:20', eventDateTime: '25 Mar 2024: 10:20' },
+        { lotID: 3, action: 'add', location: 'farm', logDateTime: '22 Mar 2024: 10:20', eventDateTime: '25 Mar 2024: 10:20' },
+        { lotID: 4, action: 'add', location: 'farm', logDateTime: '22 Mar 2024: 10:20', eventDateTime: '25 Mar 2024: 10:20' },
+        { lotID: 5, action: 'add', location: 'farm', logDateTime: '22 Mar 2024: 10:20', eventDateTime: '25 Mar 2024: 10:20' }
+    ]
+
     return (
-
-        <Container>
-             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-
-                <SidebarAdmin />
-            </div>
-
-            <h1>Transaction</h1>
-            <Table size="small" border="1px">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>lotID</TableCell>
-                        <TableCell>action</TableCell>
-                        <TableCell>location</TableCell>
-                        <TableCell>logDateTime</TableCell>
-                        <TableCell>eventDateTime</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.lotID}>
-                            <TableCell>{row.lotID}</TableCell>
-                            <TableCell>{row.action}</TableCell>
-                            <TableCell>{row.location}</TableCell>
-                            <TableCell>{row.logDateTime}</TableCell>
-                            <TableCell>{row.eventDateTime}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </Container>
+        <Box sx={{ height: 400, width: '100%' }}>
+            <Adminappbar/>
+            <SidebarAdmin/>
+            <h1 href='/register' style={{ position: 'absolute', top: 100, left: 300}}>Transaction</h1>
+            <Box sx={{ width: '80%', margin: 'auto', marginLeft: '300px', marginTop: '60px', display: 'flex'  }}>
+            <DataGrid
+                rows={rows}
+                columns={columns}
+                getRowId={(row) => row.lotID}
+                initialState={{
+                    pagination: {
+                        paginationModel: {
+                            pageSize: 5,
+                        },
+                    },
+                }}
+                pageSizeOptions={[5]}
+                checkboxSelection
+                disableRowSelectionOnClick
+                autoPageSize
+                autoHeight
+            />
+            </Box>
+        </Box>
     )
 }
 
