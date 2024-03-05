@@ -7,7 +7,7 @@ function Sidebar() {
 
   return (
     <div className='sidebar'>
-      <Menu
+      <Menu 
         onClick={({ key }) => {
           navigate(key);
         }}

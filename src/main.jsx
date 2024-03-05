@@ -12,6 +12,11 @@ import SlaughterhouseAccount from './pages/slaughterhouseAccount/slaughterhouseA
 import FarmerDashboard from './pages/farmer/FarmerDashboard.jsx'
 import FarmerPork from './pages/farmer/FarmerPork.jsx'
 import FarmerAddProduct from './pages/farmer/FarmerAddProduct.jsx'
+import SlaughterhouseDashboard from './pages/slaughterhouse/slaughterhouseDashboard.jsx'
+import SlaughterhousePork from './pages/slaughterhouse/slaughterhousePork.jsx'
+import SlaughterhouseAddProduct from './pages/slaughterhouse/slaughterhouseAddProduct.jsx'
+import RetailerDashboard from './pages/retailer/retailerDashboard.jsx'
+import Pork from './pages/retailer/Pork.jsx'
 
 const router = createBrowserRouter([
   {
@@ -64,7 +69,31 @@ const router = createBrowserRouter([
     path: '/farmerAddProduct',
     element: <FarmerAddProduct />,
   },
+  {
+    path: '/slaughterhouseDashboard',
+    element: <SlaughterhouseDashboard />,
+  },
+  {
+    path: '/slaughterhousePork',
+    element: <SlaughterhousePork />,
+  },
+  {
+    path: '/slaughterhouseAddProduct',
+    element: <SlaughterhouseAddProduct />,
+  },
+  {
+    path: '/retailerDashboard',
+    element: <RetailerDashboard />,
+  },
+  {
+    path: '/pork',
+    element: <Pork/>,
+  },
+ 
+  
+  
 
+  
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
