@@ -1,4 +1,3 @@
-import React from 'react'
 import '../layout/Header.css'
 
 function Header() {

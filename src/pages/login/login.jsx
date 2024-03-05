@@ -6,9 +6,11 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from '../../assets/logo.png'
+import { useState } from 'react';
 
-const login = () => {
+const Login = () => {
     const defaultTheme = createTheme();
+    const [role, setRole] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,7 +18,26 @@ const login = () => {
         console.log({
             email: data.get('email'),
             password: data.get('password'),
+            role: role,
         });
+        switch (role) {
+            case 'slaughter':
+                window.location = '/slaughterDashboard';
+                break;
+            case 'farmer':
+                window.location = '/farmerDashboard';
+                break;
+            case 'retailer':
+                window.location = '/retailerDashboard';
+                break;
+            case 'admin':
+                window.location = '/adminDashboard';
+                break;
+        // Add more cases for other roles as needed
+            default:
+            // Handle default case or invalid role
+            break;
+        }
     };
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -80,11 +101,35 @@ const login = () => {
                             id="password"
                             autoComplete="current-password"
                         />
+                        <TextField
+                            select
+                            fullWidth
+                            required
+                            label="Role"
+                            value={role}
+                            onChange={(e) => setRole(e.target.value)}
+                            SelectProps={{
+                                native: true,
+                            }}
+                            InputProps={{
+                                style: {
+                                    borderRadius: '15px',
+                                },
+                            }}
+                            margin="normal"
+                        >
+                            <option value=""></option>
+                            <option value="admin">Admin</option>
+                            <option value="farmer">Farmer</option>
+                            <option value="slaughter">Slaughter</option>
+                            <option value="retailer">Retailer</option>
+                            {/* Add more options for other roles if needed */}
+                        </TextField>
                         <Button
+                            fullWidth
                             type="submit"
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
-                            href='/farmerDashboard'
                         >
                             Login
                         </Button>
@@ -95,4 +140,4 @@ const login = () => {
     );
 }
 
-export default login;
+export default Login;
