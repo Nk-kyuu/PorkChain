@@ -17,6 +17,7 @@ import SlaughterhousePork from './pages/slaughterhouse/slaughterhousePork.jsx'
 import SlaughterhouseAddProduct from './pages/slaughterhouse/slaughterhouseAddProduct.jsx'
 import RetailerDashboard from './pages/retailer/retailerDashboard.jsx'
 import Pork from './pages/retailer/Pork.jsx'
+import ReAdd from './pages/retailer/reAdd.jsx'
 
 const router = createBrowserRouter([
   {
@@ -89,7 +90,12 @@ const router = createBrowserRouter([
     path: '/pork',
     element: <Pork/>,
   },
- 
+  {
+    path: '/reAdd',
+    element: <ReAdd/>,
+  },
+  
+
   
   
 

@@ -1,5 +1,5 @@
 import SidebarRetailer from '../../components/sidebar/sidebarRetailer'
-import Header from '../../layout/Header'
+import HeaderRetailer from '../../layout/HeaderRetailer'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -62,15 +62,18 @@ function Pork() {
         
           <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
           <div className='role'>Retailer</div>
-            <Header />
+            <HeaderRetailer />
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
             <SidebarRetailer />
               <div >
-              <h1>Pork Transaction</h1>
-              <Table size="small" border="1px"  style={{ width: '91%', margin: '0 auto' }}>
+              <Link to="/reAdd">
+                  <button className='addPork' onClick={Changebutton}>AddProduct</button>
+                </Link>
+              <h1  className='h1'>Pork Information </h1>
+              <Table size="small"  style={{ width: '80%', marginLeft:'50px' }}>
                 <TableHead >
                   <TableRow>
-                    <TableCell style={{color:'white',textAlign:'center'}} >LotID</TableCell>
+                    <TableCell style={{color:'white',textAlign:'center',padding:'10px'}} >LotID</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Weight</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}} >Quantity</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Origin</TableCell>
@@ -82,7 +85,7 @@ function Pork() {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow key={row.lotID}>
-                      <TableCell style={{textAlign:'center'}}>{row.lotID}</TableCell>
+                      <TableCell style={{textAlign:'center',padding:'10px'}}>{row.lotID}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.weight}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.quantity}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.origin}</TableCell>
@@ -93,9 +96,7 @@ function Pork() {
                   ))}
                 </TableBody>
               </Table>
-                <Link to="/retailerAddProduct">
-                  <button className='addPork' onClick={Changebutton}>AddProduct</button>
-                </Link>
+              
               </div>
               
             </div>

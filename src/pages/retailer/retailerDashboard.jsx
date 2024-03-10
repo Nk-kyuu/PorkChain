@@ -1,5 +1,5 @@
 import SidebarRetailer from '../../components/sidebar/sidebarRetailer'
-import Header from '../../layout/Header'
+import HeaderRetailer from '../../layout/HeaderRetailer'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -43,16 +43,15 @@ function retailerDashboard() {
       return (
     
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-          <div className='role'>Retailer</div>
-          <Header />
+          <HeaderRetailer />
           <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
             <SidebarRetailer />
             <div style={{ flex: 1 }}>
-              <h1>Pork Information</h1>
-              <Table size="small" border="1px"  style={{ width: '91%', margin: '0 auto' }}>
+              <h1  className='h1'> Transaction</h1>
+              <Table size="small" style={{ width: '80%', marginLeft:'50px' }}>
                 <TableHead >
                   <TableRow>
-                    <TableCell style={{color:'white',textAlign:'center'}}>LotID</TableCell>
+                    <TableCell style={{color:'white',textAlign:'center',padding:'10px'}}>LotID</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Action</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Location</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>LogDateTime</TableCell>
@@ -63,7 +62,7 @@ function retailerDashboard() {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow key={row.lotID}>
-                      <TableCell style={{textAlign:'center'}}>{row.lotID}</TableCell>
+                      <TableCell style={{textAlign:'center',padding:'10px'}}>{row.lotID}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.action}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.location}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.logDateTime}</TableCell>

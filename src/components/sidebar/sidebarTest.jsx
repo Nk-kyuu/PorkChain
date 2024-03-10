@@ -15,9 +15,10 @@ import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
 
 const drawerWidth = 180;
-function sidebarSlaughterhouse() {
+
+export default function PermanentDrawerLeft() {
     return (
-      <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <Drawer
                 sx={{
@@ -39,7 +40,7 @@ function sidebarSlaughterhouse() {
                 </Toolbar>
                 <List sx={{ color: 'white' }} >
                     <ListItem disablePadding >
-                        <ListItemButton component="a" href="/slaughterDashboard">
+                        <ListItemButton component="a" href="/farmerDashboard">
                             <ListItemIcon sx={{ color: 'white' }}>
                                 <DashboardIcon />
                             </ListItemIcon>
@@ -47,7 +48,7 @@ function sidebarSlaughterhouse() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="/slaughterhousePork">
+                        <ListItemButton component="a" href="/farmerPork">
                             <ListItemIcon sx={{ color: 'white' }} >
                                 <LibraryAddIcon />
                             </ListItemIcon>
@@ -57,8 +58,5 @@ function sidebarSlaughterhouse() {
                 </List>
             </Drawer>
         </Box>
-      
     );
 }
-
-export default sidebarSlaughterhouse

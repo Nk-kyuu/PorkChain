@@ -1,7 +1,7 @@
+
 table{
     position: absolute;
-    top: 30%;
-    
+    top: 30%;   
 }
 table,th,td{
     padding: 10px 30px;
@@ -9,18 +9,17 @@ table,th,td{
 }
 
 th{
-    background-color: darkblue;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
+    background-color: #1058C5 ;
+    color: rgb(244, 244, 244);
     font-size: 15px;
   
 }
 tr:nth-child(odd){
-    background-color: rgb(230, 232, 232);
+    background-color: #f3f3f3;
 }
 
 .addPork{
-    margin-top: 20px;
+    margin-top: 100px;
     padding: 15px ;
     border-radius: 10px;
     position: absolute;
@@ -28,10 +27,11 @@ tr:nth-child(odd){
     background-color: #F4AC45;
     border-style: none; 
 }
-h1{
+.h1{
     font-size: 20px;
     font-weight: 100px;
-    /* font-family: 'Courier New', Courier, monospace; */
+    margin-top: 125px; 
+    margin-left: 50px;
     color: black;
     
 }

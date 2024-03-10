@@ -1,21 +1,19 @@
-import SidebarSlaughterhouse from '../../components/sidebar/sidebarSlaughterhouse'
-import HeaderSlaughter from '../../layout/HeaderSlaughter'
-import "../farmer/FarmerAddProduct.css"
-function slaughterhouseAddProduct() {
-  function back() {
-    window.location = '/slaughterhousePork'
-  }
-
-  return (
-    <div
-      style={{ display: "flex", flexDirection: "column", height: "100vh" }}
-    >
-      <HeaderSlaughter />
-      <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
-        <SidebarSlaughterhouse />
-        <div className="container" >
-          <h1 className="product">Add Information </h1>
-          <form action="">
+import SidebarRetailer from '../../components/sidebar/sidebarRetailer'
+import HeaderRetailer from '../../layout/HeaderRetailer'
+function reAdd() {
+    function back() {
+        window.location = '/slaughterhousePork'
+      }
+      return (
+        <div
+          style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+        >
+          <HeaderRetailer />
+          <div style={{ display: "flex", flexDirection: "row", flex: 1 }}>
+            <SidebarRetailer />
+            <div className="container" >
+              <h1 className="product">Add Information </h1>
+              <form action="">
             <div className="input-grid">
               <div  >
                 <label className="labelAdd" htmlFor="lotID">Lot ID</label>
@@ -69,10 +67,11 @@ function slaughterhouseAddProduct() {
               <input className="inputButton" type="button" value="Add" onClick={back} />
             </div>
           </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  );
+      );
+  
 }
 
-export default slaughterhouseAddProduct
+export default reAdd

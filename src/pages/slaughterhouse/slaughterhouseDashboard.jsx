@@ -1,10 +1,12 @@
 import SidebarSlaughterhouse from '../../components/sidebar/sidebarSlaughterhouse'
-import Header from '../../layout/Header'
+import HeaderSlaughter from '../../layout/HeaderSlaughter'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import '../farmer/FarmerPork.css'
+
 function slaughterhouseDashboard() {
     function createData(lotID, action, location, logDateTime, eventDateTime) {
         return { lotID, action, location, logDateTime, eventDateTime };
@@ -42,27 +44,25 @@ function slaughterhouseDashboard() {
       return (
     
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-          <div className='role'>Slaughterhouse</div>
-          <Header />
+          <HeaderSlaughter />
           <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
             <SidebarSlaughterhouse />
-            <div style={{ flex: 1 }}>
-              <h1>Pork Information</h1>
-              <Table size="small" border="1px"  style={{ width: '91%', margin: '0 auto' }}>
+            <div >
+              <h1 className='h1' > Transaction </h1>
+              <Table size="small"  style={{ width: '80%', marginLeft:'50px' }}>
                 <TableHead >
                   <TableRow>
-                    <TableCell style={{color:'white',textAlign:'center'}}>LotID</TableCell>
+                    <TableCell style={{color:'white',textAlign:'center',padding:'10px'}}>LotID</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Action</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>Location</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>LogDateTime</TableCell>
                     <TableCell style={{color:'white',textAlign:'center'}}>EventDateTime</TableCell>
-                    
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow key={row.lotID}>
-                      <TableCell style={{textAlign:'center'}}>{row.lotID}</TableCell>
+                      <TableCell style={{textAlign:'center',padding:'10px'}}>{row.lotID}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.action}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.location}</TableCell>
                       <TableCell style={{textAlign:'center'}}>{row.logDateTime}</TableCell>
